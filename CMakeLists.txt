@@ -448,10 +448,11 @@ if (PKG_CONFIG_FOUND)
   set(MLPACK_VERSION_STRING "@MLPACK_VERSION_STRING@")
   configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/CMake/mlpack.pc.in
-    ${CMAKE_BINARY_DIR}/CMake/mlpack.pc.in.partial @ONLY)
+    ${CMAKE_CURRENT_BINARY_DIR}/CMake/mlpack.pc.in.partial @ONLY)
 
   message(STATUS "## CMAKE_SOURCE_DIR is ${CMAKE_SOURCE_DIR}")
   message(STATUS "## CMAKE_CURRENT_SOURCE_DIR is ${CMAKE_CURRENT_SOURCE_DIR}")
+  message(STATUS "## CMAKE_BINARY_DIR is ${CMAKE_BINARY_DIR}")
   message(STATUS "## CMAKE_CURRENT_BINARY_DIR is ${CMAKE_CURRENT_BINARY_DIR}")
   add_custom_target(pkgconfig ALL
       ${CMAKE_COMMAND}
