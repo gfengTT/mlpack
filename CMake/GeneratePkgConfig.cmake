@@ -23,6 +23,7 @@ string(REGEX REPLACE ".*#define MLPACK_VERSION_PATCH [\"]?([0-9x]+)[\"]?.*" "\\1
 set(MLPACK_VERSION_STRING
     "${MLPACK_VERSION_MAJOR}.${MLPACK_VERSION_MINOR}.${MLPACK_VERSION_PATCH}")
 
+message(STATUS "## in GeneratePkgConfig.cmake CMAKE_CURRENT_BINARY_DIR is ${CMAKE_CURRENT_BINARY_DIR}")
 configure_file(
     ${CMAKE_CURRENT_BINARY_DIR}/CMake/mlpack.pc.in.partial
     ${CMAKE_CURRENT_BINARY_DIR}/lib/pkgconfig/mlpack.pc @ONLY)
